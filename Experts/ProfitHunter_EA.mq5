@@ -6,7 +6,7 @@
 #property copyright "ProfitHunter EA"
 #property version   "1.00"
 #property description "Robust modular EA using EMA trend filter and RSI signals"
-#property strict
+
 
 // Include custom classes
 #include <ProfitHunter\Defines.mqh>
