@@ -1,4 +1,4 @@
-# 🎯 ProfitHunter EA - MetaTrader 5 Expert Advisor
+# 🎯 EA - MetaTrader 5 Expert Advisor
 
 [![MQL5](https://img.shields.io/badge/MQL5-Expert_Advisor-blue.svg)](https://www.mql5.com)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
