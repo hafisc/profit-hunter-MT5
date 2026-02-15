@@ -1,67 +1,67 @@
-# 🎯 EA - MetaTrader 5 Expert Advisor
+# 🎯 ProfitHunter EA - Expert Advisor MetaTrader 5
 
 [![MQL5](https://img.shields.io/badge/MQL5-Expert_Advisor-blue.svg)](https://www.mql5.com)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://github.com/hafisc/profit-hunter-MT5)
 
-A **robust, modular, and production-ready** Expert Advisor for MetaTrader 5 built with object-oriented programming principles. ProfitHunter EA implements a proven trend-following strategy using EMA and RSI indicators with intelligent risk management and dynamic trailing stop.
+Expert Advisor **modular, robust, dan production-ready** untuk MetaTrader 5 yang dibangun dengan prinsip pemrograman berorientasi objek. ProfitHunter EA mengimplementasikan strategi trend-following yang terbukti menggunakan indikator EMA dan RSI dengan manajemen risiko cerdas dan trailing stop dinamis.
 
-## ✨ Features
+## ✨ Fitur Unggulan
 
-- 🏗️ **Modular Architecture** - Clean separation of concerns with dedicated classes
-- 💰 **Smart Money Management** - Automatic position sizing based on account balance
-- 📊 **EMA + RSI Strategy** - Combines trend filtering with momentum confirmation
-- 🛡️ **Risk Protection** - Maximum 1 position at a time with spread filter
-- 🔄 **Dynamic Trailing Stop** - Breakeven protection + intelligent profit trailing
-- 🎯 **Production Ready** - Comprehensive error handling and logging
-- ⚙️ **Highly Configurable** - Adjustable parameters via input settings
+- 🏗️ **Arsitektur Modular** - Pemisahan fungsi yang jelas dengan kelas-kelas terpisah
+- 💰 **Manajemen Uang Cerdas** - Perhitungan lot otomatis berdasarkan saldo akun
+- 📊 **Strategi EMA + RSI** - Kombinasi filter trend dan konfirmasi momentum
+- 🛡️ **Proteksi Risiko** - Maksimal 1 posisi aktif dengan filter spread
+- 🔄 **Trailing Stop Dinamis** - Proteksi breakeven + trailing profit otomatis
+- 🎯 **Siap Produksi** - Error handling komprehensif dan logging lengkap
+- ⚙️ **Highly Configurable** - Parameter dapat disesuaikan melalui input setting
 
-## 📋 Strategy Overview
+## 📋 Ringkasan Strategi
 
-### Trading Logic
+### Logika Trading
 
-| Component | Configuration |
-|-----------|---------------|
-| **Timeframe** | H1 (1 Hour) |
-| **Trend Filter** | EMA 200 |
-| **Entry Trigger** | RSI 14 crossover at level 50 |
-| **Max Spread** | 50 points |
+| Komponen | Konfigurasi |
+|----------|-------------|
+| **Timeframe** | H1 (1 Jam) |
+| **Filter Trend** | EMA 200 |
+| **Trigger Entry** | RSI 14 crossover di level 50 |
+| **Spread Maksimal** | 50 poin |
 
-### Entry Conditions
+### Kondisi Entry
 
-**📈 Long (BUY) Signal:**
-- Price is above EMA 200 (uptrend)
-- RSI crosses above 50 (pullback recovery)
-- Spread ≤ 50 points
+**📈 Sinyal BELI (BUY):**
+- Harga di atas EMA 200 (tren naik)
+- RSI menembus di atas 50 (pemulihan pullback)
+- Spread ≤ 50 poin
 
-**📉 Short (SELL) Signal:**
-- Price is below EMA 200 (downtrend)
-- RSI crosses below 50 (momentum reversal)
-- Spread ≤ 50 points
+**📉 Sinyal JUAL (SELL):**
+- Harga di bawah EMA 200 (tren turun)
+- RSI menembus di bawah 50 (pembalikan momentum)
+- Spread ≤ 50 poin
 
-### Risk & Trade Management
+### Manajemen Risiko & Trading
 
-- **Risk per Trade:** 2% of account balance (default, configurable)
-- **Initial Stop Loss:** 200 points (configurable)
-- **Take Profit:** 400 points (configurable)
+- **Risiko per Trade:** 2% dari saldo akun (default, dapat dikonfigurasi)
+- **Stop Loss Awal:** 200 poin (dapat dikonfigurasi)
+- **Take Profit:** 400 poin (dapat dikonfigurasi)
 - **Trailing Stop:**
-  - Activates when profit ≥ 200 points
-  - Moves SL to breakeven first
-  - Then trails price by 100 points
+  - Aktif ketika profit ≥ 200 poin
+  - Memindahkan SL ke breakeven terlebih dahulu
+  - Kemudian trailing harga dengan jarak 100 poin
 
-## 🚀 Installation
+## 🚀 Instalasi
 
-### Method 1: Direct Download
+### Metode 1: Download Langsung
 
-1. **Clone or download this repository:**
+1. **Clone atau download repository ini:**
    ```bash
    git clone https://github.com/hafisc/profit-hunter-MT5.git
    ```
 
-2. **Copy files to MT5 Data Folder:**
-   - Open MetaTrader 5
-   - Click `File` → `Open Data Folder`
-   - Copy files to respective directories:
+2. **Copy file ke folder Data MT5:**
+   - Buka MetaTrader 5
+   - Klik `File` → `Open Data Folder`
+   - Copy file ke direktori masing-masing:
      ```
      📁 MQL5/
      ├── 📁 Include/ProfitHunter/
@@ -73,177 +73,177 @@ A **robust, modular, and production-ready** Expert Advisor for MetaTrader 5 buil
          └── ProfitHunter_EA.mq5
      ```
 
-3. **Compile the EA:**
-   - Open MetaEditor (F4 in MT5)
-   - Navigate to `Experts/ProfitHunter_EA.mq5`
-   - Press `F7` to compile
-   - Verify no errors in the log
+3. **Compile EA:**
+   - Buka MetaEditor (tekan F4 di MT5)
+   - Navigasi ke `Experts/ProfitHunter_EA.mq5`
+   - Tekan `F7` untuk compile
+   - Pastikan tidak ada error di log
 
-### Method 2: Git in MQL5 Folder
+### Metode 2: Clone Langsung ke Folder MQL5
 
-Navigate to your MT5 MQL5 folder and clone directly:
+Navigasi ke folder MQL5 MT5 Anda dan clone langsung:
 ```bash
-cd "C:\Users\YourUser\AppData\Roaming\MetaQuotes\Terminal\YOUR_MT5_ID\MQL5"
+cd "C:\Users\NamaUser\AppData\Roaming\MetaQuotes\Terminal\ID_MT5_ANDA\MQL5"
 git clone https://github.com/hafisc/profit-hunter-MT5.git temp
 xcopy temp\Include Include\ /E /I /Y
 xcopy temp\Experts Experts\ /E /I /Y
 rmdir /S /Q temp
 ```
 
-## ⚙️ Configuration
+## ⚙️ Konfigurasi
 
-### Input Parameters
+### Parameter Input
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| **Risk Management** |
-| `InpRiskPercent` | 2.0 | Risk per trade (% of balance) |
-| **Strategy Parameters** |
-| `InpEMAPeriod` | 200 | EMA period for trend filter |
-| `InpRSIPeriod` | 14 | RSI period for entry signal |
-| `InpRSILevel` | 50.0 | RSI crossover level |
-| **Trade Settings** |
-| `InpMagicNumber` | 123456 | Unique EA identifier |
-| `InpTradeComment` | "ProfitHunter" | Comment for trades |
-| `InpSlippage` | 10 | Allowed slippage (points) |
+| Parameter | Default | Deskripsi |
+|-----------|---------|-----------|
+| **Manajemen Risiko** |
+| `InpRiskPercent` | 2.0 | Risiko per trade (% dari saldo) |
+| **Parameter Strategi** |
+| `InpEMAPeriod` | 200 | Periode EMA untuk filter trend |
+| `InpRSIPeriod` | 14 | Periode RSI untuk sinyal entry |
+| `InpRSILevel` | 50.0 | Level crossover RSI |
+| **Pengaturan Trading** |
+| `InpMagicNumber` | 123456 | Nomor identifikasi unik EA |
+| `InpTradeComment` | "ProfitHunter" | Komentar untuk trade |
+| `InpSlippage` | 10 | Slippage yang diizinkan (poin) |
 | **Stop Loss & Take Profit** |
-| `InpStopLoss` | 200 | Initial stop loss (points) |
-| `InpTakeProfit` | 400 | Take profit (points) |
+| `InpStopLoss` | 200 | Stop loss awal (poin) |
+| `InpTakeProfit` | 400 | Take profit (poin) |
 
-## 📖 Usage
+## 📖 Cara Penggunaan
 
-1. **Attach EA to Chart:**
-   - Open H1 chart for your desired symbol (e.g., EURUSD)
-   - Navigate to `Navigator` → `Expert Advisors`
-   - Drag `ProfitHunter_EA` onto the chart
+1. **Pasang EA ke Chart:**
+   - Buka chart H1 untuk simbol yang diinginkan (contoh: EURUSD)
+   - Navigasi ke `Navigator` → `Expert Advisors`
+   - Drag `ProfitHunter_EA` ke chart
 
-2. **Configure Settings:**
-   - Adjust input parameters in the EA settings dialog
-   - Start with default settings for initial testing
-   - Consider reducing risk to 1% for conservative trading
+2. **Atur Konfigurasi:**
+   - Sesuaikan parameter input di dialog pengaturan EA
+   - Mulai dengan setting default untuk testing awal
+   - Pertimbangkan menurunkan risiko ke 1% untuk trading konservatif
 
-3. **Enable Auto Trading:**
-   - Click the "Auto Trading" button in MT5 toolbar (or press F7)
-   - Verify the EA smiley face is active on chart
-   - Check Expert tab in Terminal for EA messages
+3. **Aktifkan Auto Trading:**
+   - Klik tombol "Auto Trading" di toolbar MT5 (atau tekan F7)
+   - Pastikan ikon smiley face EA aktif di chart
+   - Cek tab Expert di Terminal untuk pesan EA
 
-4. **Monitor Performance:**
-   - Review trades in Account History
-   - Monitor EA logs in Expert tab
-   - Adjust parameters based on backtest results
+4. **Monitor Performa:**
+   - Review trade di Account History
+   - Monitor log EA di tab Expert
+   - Sesuaikan parameter berdasarkan hasil backtest
 
-## 📁 Project Structure
+## 📁 Struktur Project
 
 ```
 MQL5/
 ├── Include/ProfitHunter/
-│   ├── Defines.mqh          # Enums, constants, configurations
-│   ├── RiskManager.mqh      # Position sizing & money management
-│   ├── SignalEngine.mqh     # EMA + RSI strategy logic
-│   └── TradeManager.mqh     # Trade execution & trailing stop
+│   ├── Defines.mqh          # Enums, konstanta, konfigurasi
+│   ├── RiskManager.mqh      # Perhitungan lot & manajemen uang
+│   ├── SignalEngine.mqh     # Logika strategi EMA + RSI
+│   └── TradeManager.mqh     # Eksekusi trade & trailing stop
 └── Experts/
-    └── ProfitHunter_EA.mq5  # Main EA entry point
+    └── ProfitHunter_EA.mq5  # File utama EA
 ```
 
-### File Descriptions
+### Deskripsi File
 
-- **`Defines.mqh`** - Central configuration with enums and constants
-- **`RiskManager.mqh`** - Calculates lot size based on risk percentage and account balance
-- **`SignalEngine.mqh`** - Generates BUY/SELL signals using EMA and RSI indicators
-- **`TradeManager.mqh`** - Handles order execution and dynamic trailing stop management
-- **`ProfitHunter_EA.mq5`** - Main file that orchestrates all components
+- **`Defines.mqh`** - Konfigurasi sentral dengan enums dan konstanta
+- **`RiskManager.mqh`** - Menghitung ukuran lot berdasarkan persentase risiko dan saldo akun
+- **`SignalEngine.mqh`** - Menghasilkan sinyal BUY/SELL menggunakan indikator EMA dan RSI
+- **`TradeManager.mqh`** - Menangani eksekusi order dan manajemen trailing stop dinamis
+- **`ProfitHunter_EA.mq5`** - File utama yang mengorkestrasi semua komponen
 
-## 🔧 Customization
+## 🔧 Kustomisasi
 
-The modular design makes it easy to customize:
+Desain modular memudahkan kustomisasi:
 
-### Change Strategy
-Edit `SignalEngine.mqh` to implement different indicators or logic:
+### Ubah Strategi
+Edit `SignalEngine.mqh` untuk mengimplementasikan indikator atau logika berbeda:
 ```cpp
-// Example: Add MACD confirmation
+// Contoh: Tambahkan konfirmasi MACD
 int m_macdHandle;
-// ... implement MACD logic
+// ... implementasi logika MACD
 ```
 
-### Modify Risk Rules
-Edit `RiskManager.mqh` to implement alternative position sizing:
+### Modifikasi Aturan Risiko
+Edit `RiskManager.mqh` untuk mengimplementasikan perhitungan posisi alternatif:
 ```cpp
-// Example: Implement Kelly Criterion
+// Contoh: Implementasi Kelly Criterion
 double GetKellyLotSize(double winRate, double avgWin, double avgLoss)
 {
-    // ... Kelly formula implementation
+    // ... implementasi formula Kelly
 }
 ```
 
-### Add Filters
-Edit `SignalEngine.mqh` to add time or volatility filters:
+### Tambahkan Filter
+Edit `SignalEngine.mqh` untuk menambahkan filter waktu atau volatilitas:
 ```cpp
-// Example: Add time-of-day filter
+// Contoh: Tambahkan filter jam trading
 bool CheckTradingHours()
 {
     MqlDateTime dt;
     TimeToStruct(TimeCurrent(), dt);
-    return (dt.hour >= 8 && dt.hour <= 16); // Trade 8AM-4PM only
+    return (dt.hour >= 8 && dt.hour <= 16); // Trading jam 8 pagi - 4 sore saja
 }
 ```
 
 ## 📊 Backtesting
 
-Before live trading, always backtest:
+Sebelum trading live, selalu lakukan backtest:
 
-1. **Open Strategy Tester** (Ctrl+R)
-2. Select `ProfitHunter_EA`
-3. Choose symbol (e.g., EURUSD)
-4. Set timeframe to **H1**
-5. Select date range (at least 1 year)
-6. Use "Every tick based on real ticks" mode
-7. Click **Start**
+1. **Buka Strategy Tester** (Ctrl+R)
+2. Pilih `ProfitHunter_EA`
+3. Pilih simbol (contoh: EURUSD)
+4. Set timeframe ke **H1**
+5. Pilih rentang tanggal (minimal 1 tahun)
+6. Gunakan mode "Every tick based on real ticks"
+7. Klik **Start**
 
-### Optimization Tips
+### Tips Optimasi
 
-- Test different EMA periods (150-250)
-- Optimize RSI period (10-20)
-- Adjust SL/TP ratio (1:1.5 to 1:3)
-- Test on multiple symbols
+- Test berbagai periode EMA (150-250)
+- Optimasi periode RSI (10-20)
+- Sesuaikan rasio SL/TP (1:1.5 sampai 1:3)
+- Test pada berbagai simbol
 
 ## ⚠️ Disclaimer
 
-> **IMPORTANT:** Trading foreign exchange on margin carries a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. The high degree of leverage can work against you as well as for you.
+> **PENTING:** Trading valuta asing dengan margin membawa tingkat risiko yang tinggi dan mungkin tidak cocok untuk semua investor. Kinerja masa lalu tidak menjamin hasil di masa depan. Tingkat leverage yang tinggi dapat merugikan Anda.
 >
-> This EA is provided for educational purposes. Always:
-> - Test thoroughly on demo account first
-> - Use proper risk management (max 1-2% per trade)
-> - Never trade with money you cannot afford to lose
-> - Understand the strategy before using it
+> EA ini disediakan untuk tujuan edukasi. Selalu:
+> - Test secara menyeluruh di akun demo terlebih dahulu
+> - Gunakan manajemen risiko yang tepat (maksimal 1-2% per trade)
+> - Jangan trading dengan uang yang tidak mampu Anda rugikan
+> - Pahami strategi sebelum menggunakannya
 
-## 🤝 Contributing
+## 🤝 Kontribusi
 
-Contributions are welcome! Feel free to:
+Kontribusi sangat diterima! Silakan:
 
-- 🐛 Report bugs via [Issues](https://github.com/hafisc/profit-hunter-MT5/issues)
-- 💡 Suggest new features
-- 🔧 Submit pull requests
-- ⭐ Star this repo if you find it useful!
+- 🐛 Laporkan bug melalui [Issues](https://github.com/hafisc/profit-hunter-MT5/issues)
+- 💡 Usulkan fitur baru
+- 🔧 Kirim pull request
+- ⭐ Beri bintang jika repository ini bermanfaat!
 
-## 📝 License
+## 📝 Lisensi
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Project ini dilisensikan di bawah MIT License - lihat file [LICENSE](LICENSE) untuk detail.
 
-## 📧 Contact
+## 📧 Kontak
 
 - **GitHub:** [@hafisc](https://github.com/hafisc)
 - **Issues:** [GitHub Issues](https://github.com/hafisc/profit-hunter-MT5/issues)
 
 ## 🙏 Acknowledgments
 
-- Built with MQL5 Standard Library
-- Inspired by professional trading strategies
-- Developed with object-oriented best practices
+- Dibangun dengan MQL5 Standard Library
+- Terinspirasi dari strategi trading profesional
+- Dikembangkan dengan best practices object-oriented programming
 
 ---
 
-### 📈 Happy Trading! 🚀
+### 📈 Selamat Trading! 🚀
 
-*Remember: The best trade is the one you don't take if conditions aren't perfect.*
+*Ingat: Trade terbaik adalah yang tidak Anda ambil jika kondisinya tidak sempurna.*
 
-**Version 1.0.0** | Last Updated: February 2026
+**Versi 1.0.0** | Terakhir Diperbarui: Februari 2026
